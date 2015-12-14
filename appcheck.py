@@ -53,10 +53,8 @@ class PermissionExtraction(object):
 		for pername,number in self.dicts.items():
 			f2.write(pername+":"+str(number)+"\n")
 		f2.close()
-		f3 = open("out.txt","w")
 		trans = np.array(self.getMaxtrix())
 		np.savetxt("out.txt",trans,fmt=["%s"]*trans.shape[1],newline='\n')
-		f3.close()
 	def start(self):
 		self.getFiledict(self.path)
 		self.getPermissiondict()
